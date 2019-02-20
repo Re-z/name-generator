@@ -29,3 +29,17 @@ form {
 .list li:last-child{
     margin:0;
 }
+.result {}
+.result__item {
+    background: lightblue;
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+.is-hidden {
+    display: none;
+}

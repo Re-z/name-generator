@@ -1,4 +1,5 @@
-let form = document.getElementById('generate-names');
+let form = document.getElementById('generate-names'),
+    result = document.getElementById('result')
 
     
 
@@ -15,8 +16,25 @@ form.addEventListener('submit',function(){
 
       xhr.onload = function(){
         if(this.status == 200) {
+
+            //clear previous result
+            let resultChildren = result.querySelectorAll('#result div'),
+                resultChildrenArray = Array.from(resultChildren);
+            resultChildrenArray.forEach(function(el){
+                el.remove()
+            });
+            
+            // show heading (names)
+            let resultHeading = document.querySelector('#result .is-hidden');
+            if(resultHeading) {
+              resultHeading.classList.remove('is-hidden');
+            }
+            //parse response and print to DOM
             let response = JSON.parse(this.responseText);
-            console.log(response);
+            response.forEach(function(el, i){
+              let name = `<div class="result__item u-full-width">${i+1}. ${el.name}</div>`
+              result.insertAdjacentHTML('beforeEnd', name)
+            })
         }
       }
       xhr.send()
