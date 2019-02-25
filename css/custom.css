@@ -43,3 +43,13 @@ form {
 .is-hidden {
     display: none;
 }
+.alert {
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    background: #F8D7DA;
+    color: #dc3545;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: none;
+}
