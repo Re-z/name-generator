@@ -45,8 +45,7 @@ form {
 }
 .alert {
     text-align: center;
-    height: 38px;
-    line-height: 38px;
+    padding: 6px 0;
     background: #F8D7DA;
     color: #dc3545;
     border: 1px solid transparent;
