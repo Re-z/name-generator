@@ -19,19 +19,17 @@ function getApi(){
         
         //send query
         fetch(query)
-        .then(function(response){
+        .then((response) => {
             //get data and convert it to an array (like json.parse)
             return response.json();
         })
         .then(
-            function(jsonData) {
+            (jsonData) => {
                 //clear previous result
                 let resultChildren = result.querySelectorAll('#result div'),
                     resultChildrenArray = Array.from(resultChildren);
                 
-                resultChildrenArray.forEach(function(el){
-                    el.remove()
-                });
+                resultChildrenArray.forEach((el) => { el.remove() });
 
                 // show heading (names)
                 let resultHeading = document.querySelector('#result .is-hidden');
@@ -39,7 +37,7 @@ function getApi(){
                     resultHeading.classList.remove('is-hidden');
                 }
                 //handle data and push it to dom
-                jsonData.forEach(function(el, i){
+                jsonData.forEach((el, i) => {
                     let name = `<div class="result__item u-full-width">${i+1}. ${el.name} ${el.surname}</div>`
                     result.insertAdjacentHTML('beforeEnd', name)
                 })
